@@ -44,7 +44,7 @@ class TranscribeAudioView(APIView):
         serializer.is_valid(raise_exception=True)
 
         audio_file = serializer.validated_data["audio_url"]
-        threshold = serializer.validated_data["language_confidence_threshold"]
+        threshold = serializer.validated_data.get("language_confidence_threshold")
 
         try:
             transcriber = aai.Transcriber()

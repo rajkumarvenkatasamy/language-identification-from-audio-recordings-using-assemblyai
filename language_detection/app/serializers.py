@@ -7,4 +7,4 @@ class AudioUploadSerializer(serializers.Serializer):
 
 class TranscribeAudioSerializer(serializers.Serializer):
     audio_url = serializers.CharField()
-    language_confidence_threshold = serializers.FloatField()
+    language_confidence_threshold = serializers.FloatField(required=False)
